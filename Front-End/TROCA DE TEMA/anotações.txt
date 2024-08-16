@@ -1,0 +1,150 @@
+---------------------- CSS
+
+:root: Define variáveis CSS globais que podem ser usadas em todo o documento. Neste caso, foi definido três 
+variáveis: --green, --white e --black, que armazenam as cores verde, branco e preto, respectivamente.
+
+*: Aplica estilos a todos os elementos da página.
+margin: 0; padding: 0;: Remove margens e preenchimentos padrão para garantir que não haja espaçamento indesejado ao 
+redor dos elementos.
+
+box-sizing: border-box;: Define o modelo de caixa para todos os elementos como border-box, o que inclui o padding e a 
+borda dentro da largura e altura especificadas.
+
+font-family: Arial, sans-serif;: Define a família de fontes padrão para Arial ou uma fonte sans-serif genérica.
+
+body: Aplica estilos ao corpo da página.
+background: var(--bg);: Define o fundo da página usando a variável --bg, que será definida dinamicamente com base no 
+tema atual (claro ou escuro).
+
+color: var(--fontColor);: Define a cor do texto usando a variável --fontColor, que também será ajustada com base no
+ tema.
+
+transition: background 0.3s ease, color 0.3s ease;: Aplica uma transição suave de 0.3 segundos para mudanças na cor de 
+fundo e na cor do texto, proporcionando uma experiência de alternância de tema mais agradável visualmente.
+
+
+header: Aplica estilos ao cabeçalho da página, que geralmente contém o título e a navegação.
+
+background: var(--headerBg);: Define o fundo do cabeçalho usando a variável --headerBg.
+
+padding: 1rem;: Adiciona um preenchimento interno de 1 rem ao redor do cabeçalho para espaçamento.
+
+display: flex; justify-content: space-between; align-items: center;: Usa flexbox para alinhar os elementos do cabeçalho:
+
+justify-content: space-between; para distribuir os itens uniformemente na linha e align-items: center; para centralizá-los verticalmente.
+
+header h1: Estilos específicos para o título dentro do cabeçalho.
+
+color: var(--headerText);: Define a cor do texto do cabeçalho usando a variável --headerText.
+
+nav ul: Estilos para a lista não ordenada dentro da navegação.
+
+list-style-type: none;: Remove os marcadores de lista padrão.
+
+nav ul li: Estilos para os itens da lista de navegação.
+
+margin-right: 1rem;: Adiciona uma margem direita de 1 rem entre os itens da lista.
+
+nav ul li a: Estilos para os links dentro dos itens da lista de navegação.
+
+text-decoration: none;: Remove a decoração de sublinhado padrão dos links.
+
+transition: color 0.3s ease;: Adiciona uma transição suave de cor aos links quando o mouse passa por cima deles.
+
+.btn-theme: Estilos para o botão de alternar tema.
+
+padding: 0.5rem 1rem;: Adiciona preenchimento interno de 0.5 rem na vertical e 1 rem na horizontal.
+
+border: none;: Remove a borda do botão.
+
+border-radius: 4px;: Arredonda os cantos do botão com um raio de 4 pixels.
+
+background-color: var(--btnBg);: Define a cor de fundo do botão usando a variável --btnBg.
+
+color: var(--btnText);: Define a cor do texto do botão usando a variável --btnText.
+
+cursor: pointer;: Altera o cursor do mouse para indicar que o botão é clicável.
+
+.btn-theme:focus: Estilos aplicados ao foco do botão (quando o usuário tabula até ele).
+
+outline: none;: Remove a borda de foco padrão que aparece ao redor do botão.
+
+footer: Estilos para o rodapé da página.
+
+background-color: var(--footerBg);: Define o fundo do rodapé usando a variável --footerBg.
+
+text-align: center;: Centraliza o texto dentro do rodapé.
+
+padding: 1rem;: Adiciona um preenchimento interno de 1 rem ao redor do rodapé.
+
+position: absolute; bottom: 0;: Posiciona o rodapé no fundo da página.
+
+width: 100%;: Define a largura do rodapé como 100% da largura da janela do navegador.
+
+
+------------------ JS
+const themeSwitcher = document.querySelector('.btn-theme');: Seleciona o botão de alternar tema.
+
+themeSwitcher.addEventListener('click', function() { ... });: Adiciona um ouvinte de evento para o clique no botão.
+
+body.classList.toggle('dark-theme');: Alterna a classe dark-theme no elemento <body>, permitindo alternar entre os temas claro e escuro.
+
+setDarkTheme() e setLightTheme(): Funções que definem as propriedades CSS correspondentes para os temas escuro e claro, respectivamente.
+
+------------------- HTML
+Estrutura e Elementos:
+<!DOCTYPE html>: Declara o tipo de documento como HTML5.
+<html lang="en">: Define o idioma da página como inglês (opcionalmente, pode ser outro idioma).
+
+<head>: Contém metadados, como o título da página, informações de codificação, viewport e referência ao arquivo CSS.
+
+<meta charset="UTF-8">: Define o conjunto de caracteres como UTF-8 para suportar caracteres especiais.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">: Define a largura da viewport para o dispositivo e escala inicial para 1.0.
+
+<title>Loja de Tênis</title>: Título da página exibido na aba do navegador.
+
+<link rel="stylesheet" href="styles.css">: Referência ao arquivo CSS externo para estilização da página.
+
+Corpo da Página (<body>)
+
+<body class="light-theme">: O corpo da página começa com a classe light-theme, que define o tema inicial como claro.
+
+Cabeçalho (<header>)
+
+<header>: Agrupa o cabeçalho da página, que inclui o título da loja e a navegação.
+
+<h1>Loja de Tênis</h1>: Título principal da página.
+
+<nav>: Contém a navegação principal da página.
+
+<ul> e <li>: Lista de itens de navegação (Home, Produtos, Contato) dentro de uma lista não ordenada.
+
+<a href="#">: Links de navegação que não têm um destino específico definido (# indica o link para a mesma página, mas sem alterar a posição).
+
+Conteúdo Principal (<main>)
+
+<main>: Contém o conteúdo principal da página.
+
+<section class="produtos">: Seção que lista os produtos da loja de tênis.
+
+<h2>Nossos Produtos</h2>: Título da seção de produtos.
+
+<ul> e <li>: Lista de produtos dentro de uma lista não ordenada.
+
+Alternador de Tema (<div class="tema-switcher">)
+
+<div class="tema-switcher">: Divisão que contém o botão para alternar entre temas.
+
+<button class="btn-theme">Tema Escuro</button>: Botão que permite ao usuário alternar entre os temas claro e escuro.
+ O texto do botão será alterado dinamicamente pelo JavaScript conforme o tema atual.
+
+
+<footer>: Contém informações de rodapé da página.
+
+<p>&copy; 2024 Loja de Tênis. Todos os direitos reservados.</p>: Texto de direitos autorais exibido no rodapé da página.
+
+JavaScript (<script src="script.js"></script>)
+
+<script src="script.js"></script>: Inclui o arquivo JavaScript externo (script.js) que adiciona a funcionalidade de alternar tema à página.
+
